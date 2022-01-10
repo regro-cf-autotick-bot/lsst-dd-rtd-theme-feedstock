@@ -1,18 +1,18 @@
 {% set name = "lsst-dd-rtd-theme" %}
-{% set version = "0.2.3" %}
+{% set version = "0.2.4" %}
 
 package:
-  name: "{{ name|lower }}"
-  version: "{{ version }}"
+  name: {{ name|lower }}
+  version: {{ version }}
 
 source:
-  url: "https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz"
-  sha256: "214d6e6489dee49fec9d605a1e114b3e199906ef4da258a52e6deb1fdc715518"
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: e3b227227da65ba3acb0c70f78730612f36113cac6ce449f782a207ad6537f19
 
 build:
   noarch: python
   number: 0
-  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv "
+  script: '{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv '
 
 requirements:
   host:
@@ -30,13 +30,13 @@ test:
     - lsst_dd_rtd_theme
 
 about:
-  home: "https://github.com/lsst-sqre/lsst_dd_rtd_theme/"
-  license: "MIT"
-  license_family: "MIT"
-  license_file: "LICENSE"
-  summary: "ReadTheDocs.org theme for Sphinx, 2013 version,forked by LSST/AURA."
-  doc_url: "https://github.com/lsst-sqre/lsst_dd_rtd_theme/blob/master/README.rst"
-  dev_url: "https://github.com/lsst-sqre/lsst_dd_rtd_theme/"
+  home: https://github.com/lsst-sqre/lsst_dd_rtd_theme/
+  license: MIT
+  license_family: MIT
+  license_file: LICENSE
+  summary: ReadTheDocs.org theme for Sphinx, 2013 version,forked by LSST/AURA.
+  doc_url: https://github.com/lsst-sqre/lsst_dd_rtd_theme/blob/master/README.rst
+  dev_url: https://github.com/lsst-sqre/lsst_dd_rtd_theme/
 
 extra:
   recipe-maintainers:
