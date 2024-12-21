@@ -6,26 +6,28 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: e3b227227da65ba3acb0c70f78730612f36113cac6ce449f782a207ad6537f19
 
 build:
   noarch: python
-  number: 0
+  number: 1
   script: '{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv '
 
 requirements:
   host:
     - pip
-    - python >=3.0
+    - python {{ python_min }}
     - setuptools
     - setuptools_scm
   run:
-    - python >=3.0
+    - python >={{ python_min }}
     - setuptools
     - sphinx >=1.3
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - lsst_dd_rtd_theme
 
